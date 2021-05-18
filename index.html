@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Netflix | Landing Page UI Design</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="assets/logo.png" alt="movie logo"></a>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+
+    <div class="banner">
+        <img src="assets/bg.jpg" class="bg" alt="banner Mulan">
+        <div class="content">
+            <img src="assets/name.png" class="movieTitle" alt="movie title">
+            <h4>
+                <span>2020</span>
+                <span><i>12+</i></span>
+                <span>1h 55min</span>
+                <span>Action</span>
+            </h4>
+            <p>Fearful that her ailing father will be drafted into the Chinese military, Mulan (Ming-Na Wen) takes his
+                spot -- though, as a girl living under a patriarchal regime, she is technically unqualified to serve.
+                She cleverly impersonates a man and goes off to train with fellow recruits. Accompanied by her dragon,
+                Mushu (Eddie Murphy), she uses her smarts to help ward off a Hun invasion, falling in love with a
+                dashing captain along the way.</p>
+            <div class="buttons">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Play</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> My List</a>
+            </div>
+        </div>
+        <a href="#" class="play" onclick="toggleVideo()"><img src="assets/play.png" alt="trailer">Watch Trailer</a>
+    </div>
+
+    <div class="trailer">
+        <video src="assets/mulanTrailer.mp4" controls="true"></video>
+        <img src="assets/close.png" class="close" alt="close" onclick="toggleVideo()">
+    </div>
+
+    <script>
+        function toggleVideo() {
+            const trailer = document.querySelector('.trailer');
+            const video = document.querySelector('video');
+            trailer.classList.toggle('active')
+            video.currentTime = 0;
+            video.pause()
+        }
+    </script>
+</body>
+</html>
